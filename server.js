@@ -20,7 +20,9 @@ Mongoose.connect(db, {
     useNewUrlParser: true,
     useCreateIndex : true,
     useFindAndModify : true
-})
+}).then(() => console.log("..Mongo connected"))
+.catch(err => console.log(err))
+
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
